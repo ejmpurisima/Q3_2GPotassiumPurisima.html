@@ -56,7 +56,7 @@ form {
 
         }
 
-        .buttons input[type="submit"], .buttons input[type="reset"] {
+        .buttons input[type="submit"], .buttons input[type="reset"], .buttons input[type="button"] {
             font-family: "Open Sans", sans-serif;
             padding: 12px 30px;
             font-size: 18px;
