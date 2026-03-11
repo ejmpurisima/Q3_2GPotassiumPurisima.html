@@ -8,19 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <title> List of Sign Ups </title>
     </head>
 
 <body>
 
 <h1> List of Students Who Signed-up </h1>
-<div class = "author"> by Erin Purisima!</div>
 
-<a href = "index.html" class = "back-link"> Back to Sign ups </a>
+<a href = "index.html" class = "back-link"> Back to Sign ups </a> <br></br>
 
 <div class="controls">
         <label for="clubFilter">Select Your Club</label>
-        <select id="clubFilter" onchange="filterSignups()" placeholder=" -- select an option --">
-            <option value="" disabled selected>Select Club</option>
+        <select id="clubFilter" onchange="filterSignups()">
+            <option value="" disabled selected>Select an option</option>
             <option value="alianti">Alianti [Frisbee]</option>
             <option value="bakeclub">Bake Club [Baking]</option>
             <option value="himigagham">Himig Agham [Choral]</option>

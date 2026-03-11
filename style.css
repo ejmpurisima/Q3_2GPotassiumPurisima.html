@@ -42,9 +42,9 @@ form {
             font-size: 20px;
             min-height: 100vh;
             margin: 0;
-            display: flex;
             justify-content: center;
             align-items: center;
+            position: relative; top: 50px; left: 100px;
 
         }
 
@@ -70,4 +70,8 @@ form {
             border-color: #008bee;
             box-shadow: 0 0 5px #74c0fc;
             background-color: #ffffff;
+        }
+
+        .controls {
+            width: 30%;
         }
