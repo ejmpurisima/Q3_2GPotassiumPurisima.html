@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,28 +13,28 @@
 
     <body>
         <main>
-        <form method = "post" onsubmit = "return confSubmit()" onreset="return confReset()">
+        <form method = "get" onsubmit = "return confSubmit()" onreset="return confReset()">
             <fieldset>
                 <legend><b>Student Information</b></legend>
     
                 <label>
                     Student ID:
-                    <input type="number" required>
+                    <input type="number" id="student_id" required>
                 </label><br></br>
     
                 <label>
                     Full Name:
-                    <input type="text" required onblur="checkEmpty(this)"></label>
+                    <input type="text" id="full_name" required onblur="checkEmpty(this)"></label>
                 </label><br></br>
     
                 <label>
                     Birthday:
-                    <input type="date" required>
+                    <input type="date" id="birthday" required>
                 </label><br></br>
     
                 <label>
                     Email Address:
-                    <input type="email" required>
+                    <input type="email" id="email" required>
                 </label>
              </fieldset>
 
@@ -96,4 +95,29 @@
     </form>
     </main>
 </body>
+
+<script>
+    function saveSignup(event){
+    event.preventDefault();
+
+    let signUps = JSON.parse(localStorage.getItem("clubSignUps")) || [];
+
+    const signup = {
+        studentId: document.getElementById("studentId").value,
+        fullName: document.getElementById("fullName").value,
+        grade: document.getElementById("grade").value,
+        email: document.getElementById("email").value,
+        mobile: document.getElementById("mobile").value,
+        club: document.getElementById("club").value
+    };
+
+    signUps.push(signup);
+
+    localStorage.setItem("clubSignUps", JSON.stringify(signUps));
+
+    alert("Signup saved!");
+
+    document.querySelector("form").reset();
+}
+</script>
 

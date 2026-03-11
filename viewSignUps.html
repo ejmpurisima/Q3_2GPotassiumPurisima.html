@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -55,7 +54,7 @@
 <script>
 let signUps = JSON.parse(localStorage.getItem("clubSignUps")) || [];
 
-const tableBody = document.querySelector("#signupTable tbody");
+const tableBody = document.querySelector("#signupsTable tbody");
 const total = document.getElementById("totalSignups");
 const clubFilter = document.getElementById("clubFilter");
 
@@ -90,7 +89,7 @@ function fixTable(filter) {
         });
     }
 
-    total.textContent = `Total Sign-ups: ${filtered.length}`;
+    total.textContent = `Total Sign-ups: ${filed.length}`;
 }
 
 
