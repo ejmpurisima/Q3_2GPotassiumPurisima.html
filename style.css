@@ -91,6 +91,7 @@ form {
         th {
             background-color: rgb(8, 52, 119);
             color: white;
+            width: 20px;
         }
 
         .back-link {
