@@ -33,4 +33,71 @@
         </select>
 </div>
 
-<table id
+<div class = "message" id = "totalSignUps"></div>
+
+<table id = "signupsTable">
+    <thead>
+        <tr>
+            <th> Club </th>
+            <th> Student ID </th>
+            <th> Full Name </th>
+            <th> Grade </th>
+            <th> Email </th>
+            <th> Mobile </th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+
+</table>
+
+</body>
+
+<script>
+let signUps = JSON.parse(localStorage.getItem("clubSignUps")) || [];
+
+const tableBody = document.querySelector("#signupTable tbody");
+const total = document.getElementById("totalSignups");
+const clubFilter = document.getElementById("clubFilter");
+
+function fixTable(filter) {
+    tableBody.innerHTML = "";
+
+    if(signUps.length === 0) {
+        total.textContent = "";
+        tableBody.innerHTML = '<tr><td colspan="9">No sign-ups saved yet.</td></tr>';
+        return;
+    }
+
+    let filed = signUps;
+    if(filter && filter !== "all") {
+        filed = signUps.filter(s => s.club === filter);
+    }
+
+    if(filed.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="9">No sign-ups for this club.</td></tr>';
+    } else {
+        filed.forEach(s => {
+            const row = `<tr>
+                <td>${s.studentId}</td>
+                <td>${s.fullName}</td>
+                <td>${s.grade}</td>
+                <td>${s.email}</td>
+                <td>${s.mobile}</td>
+
+>
+            </tr>`;
+            tableBody.innerHTML += row;
+        });
+    }
+
+    total.textContent = `Total Sign-ups: ${filtered.length}`;
+}
+
+
+fixTable("all");
+
+clubFilter.addEventListener("change", () => {
+    fixTable(clubFilter.value);
+});
+
+</script>
